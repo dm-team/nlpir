@@ -10,8 +10,11 @@ public class NlpirTest {
 	 * 分词测试
 	 */
     public void testParticiple(){
+
+        System.out.println(ClassLoader.getSystemResource("a.txt").getPath());
+
     	NlpirMethod.Nlpir_init();
-    	String sSrc=FileOperateUtils.getFileContent("C:\\Users\\Administrator.KODQ5W6UHGL6CP8\\Desktop\\ICTCLAS&NLPIR_Windows\\test.txt");
+    	String sSrc=FileOperateUtils.getFileContent(ClassLoader.getSystemResource("a.txt").getPath());
     	logger.debug("文章内容为---->"+sSrc);
     	String data= NlpirMethod.NLPIR_ParagraphProcess(sSrc, 1);
 //    	FileOperateUtils.writeFile(data, "E:\\灵玖\\国防科技大学\\国防科大测试语料\\听out.txt");
